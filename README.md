@@ -5,10 +5,10 @@ This project automates the generation of interactive web maps using spatial data
 
 ## Note about the input data
 The watershed polygons and streams were extracted from the National Hydrography dataset for the state of Texas. I used python and geopandas to get the dataset, transform the features, create geoparquet files for individual watersheds, and create individual geoparquet files with the streams for each watershed.
-The streams table for this dataset contains just over 2 million rows and includes a geometry column. I wanted to break the strean data into smaller pieces based on an appropriate extent such as the level 8 watersheds to reduce resource requirements and increase analysis speed. I also wanted to convert the data to a more performant file format that could be efficiently queried, transported, and stored. 
+The streams table for this dataset contains just over 2 million rows and includes a geometry column. I wanted to break the stream data into smaller pieces based on an appropriate extent such as the level 8 watersheds to reduce resource requirements and increase analysis speed. I also wanted to convert the data to a more performant file format that could be efficiently queried, transported, and stored. 
 
 ## Functions
-There are four functions used to create the parquet files to interactive web maps.
+There are four functions used to create interactive web maps from the parquet files.
 ### extract_common_number(filename)
 - Extracts an 8-digit hydrologic unit code (HUC) from file names to match corresponding watershed and stream files.
 ### add_banner_to_html(output_html, title)
